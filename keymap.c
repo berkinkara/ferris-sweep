@@ -25,7 +25,6 @@ enum layer_names {
 #define NAV_SPC LT(NAVIGATION, KC_SPC)
 #define MED_TAB LT(MEDIA, KC_TAB)
 
-#define LSFT_LPRN LSFT_T(KC_LPRN)
 #define LCTL_LBRC LCTL_T(KC_LBRC)
 #define LALT_LCBR LALT_T(KC_LCBR)
 #define LGUI_LGRV LGUI_T(KC_GRV)
@@ -44,7 +43,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ),
     [SYMBOL] = LAYOUT_split_3x5_2(
         KC_1      , KC_2      , KC_3      , KC_4      , KC_5      ,        KC_6      , KC_7      , KC_8      , KC_9      , KC_0      ,
-        LGUI_LGRV , LALT_LCBR , LCTL_LBRC , LSFT_LPRN , KC_PLUS   ,        KC_ASTR   , RSFT_UNDS , RCTL_DQUO , RALT_QUOT , RGUI_SCLN ,
+        LGUI_LGRV , LALT_LCBR , LCTL_LBRC , SC_LSPO   , KC_PLUS   ,        KC_ASTR   , RSFT_UNDS , RCTL_DQUO , RALT_QUOT , RGUI_SCLN ,
         KC_BSLS   , KC_RCBR   , KC_RBRC   , KC_RPRN   , KC_MINS   ,        KC_SLSH   , KC_EQL    , KC_LT     , KC_GT     , KC_QUES   ,
                                             XXXXXXX   , KC_ESC    ,        XXXXXXX   , XXXXXXX
     ),
