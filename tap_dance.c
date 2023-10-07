@@ -90,20 +90,43 @@ static td_tap_t tap_states[] = {
 static void ampersand_pipe_finished(tap_dance_state_t *state, void *user_data) {
     tap_states[AMPERSAND_PIPE].state = cur_dance(state);
     switch (tap_states[AMPERSAND_PIPE].state) {
-        case TD_SINGLE_TAP: break;
-        case TD_SINGLE_HOLD: break;
-        case TD_DOUBLE_TAP: break;
-        case TD_DOUBLE_SINGLE_TAP: break;
+        case TD_SINGLE_TAP:
+            register_code(KC_LSFT);
+            register_code(KC_7);
+            break;
+        case TD_SINGLE_HOLD:
+            register_code(KC_LALT);
+            break;
+        case TD_DOUBLE_TAP:
+            register_code(KC_LSFT);
+            register_code(KC_BSLS);
+            break;
+        case TD_DOUBLE_SINGLE_TAP:
+            register_code(KC_LSFT);
+            tap_code(KC_7);
+            register_code(KC_7);
+            break;
         default: break;
     }
 }
 
 static void ampersand_pipe_reset(tap_dance_state_t *state, void *user_data) {
     switch (tap_states[AMPERSAND_PIPE].state) {
-        case TD_SINGLE_TAP: break;
-        case TD_SINGLE_HOLD: break;
-        case TD_DOUBLE_TAP: break;
-        case TD_DOUBLE_SINGLE_TAP: break;
+        case TD_SINGLE_TAP:
+            unregister_code(KC_LSFT);
+            unregister_code(KC_7);
+            break;
+        case TD_SINGLE_HOLD:
+            unregister_code(KC_LALT);
+            break;
+        case TD_DOUBLE_TAP:
+            unregister_code(KC_LSFT);
+            unregister_code(KC_BSLS);
+            break;
+        case TD_DOUBLE_SINGLE_TAP:
+            unregister_code(KC_LSFT);
+            unregister_code(KC_7);
+            break;
         default: break;
     }
     tap_states[AMPERSAND_PIPE].state = TD_NONE;
@@ -112,20 +135,39 @@ static void ampersand_pipe_reset(tap_dance_state_t *state, void *user_data) {
 static void asterisk_circle_finished(tap_dance_state_t *state, void *user_data) {
     tap_states[ASTERISK_CIRCLE].state = cur_dance(state);
     switch (tap_states[ASTERISK_CIRCLE].state) {
-        case TD_SINGLE_TAP: break;
-        case TD_SINGLE_HOLD: break;
-        case TD_DOUBLE_TAP: break;
-        case TD_DOUBLE_SINGLE_TAP: break;
+        case TD_SINGLE_TAP:
+        case TD_SINGLE_HOLD:
+            register_code(KC_LSFT);
+            register_code(KC_8);
+            break;
+        case TD_DOUBLE_TAP:
+            register_code(KC_LSFT);
+            register_code(KC_6);
+            break;
+        case TD_DOUBLE_SINGLE_TAP: 
+            register_code(KC_LSFT);
+            tap_code(KC_8);
+            register_code(KC_8);
+            break;
         default: break;
     }
 }
 
 static void asterisk_circle_reset(tap_dance_state_t *state, void *user_data) {
     switch (tap_states[ASTERISK_CIRCLE].state) {
-        case TD_SINGLE_TAP: break;
-        case TD_SINGLE_HOLD: break;
-        case TD_DOUBLE_TAP: break;
-        case TD_DOUBLE_SINGLE_TAP: break;
+        case TD_SINGLE_TAP:
+        case TD_SINGLE_HOLD:
+            unregister_code(KC_LSFT);
+            unregister_code(KC_8);
+            break;
+        case TD_DOUBLE_TAP:
+            unregister_code(KC_LSFT);
+            unregister_code(KC_6);
+            break;
+        case TD_DOUBLE_SINGLE_TAP:
+            unregister_code(KC_LSFT);
+            unregister_code(KC_8);
+            break;
         default: break;
     }
     tap_states[ASTERISK_CIRCLE].state = TD_NONE;
@@ -134,20 +176,37 @@ static void asterisk_circle_reset(tap_dance_state_t *state, void *user_data) {
 static void braces_finished(tap_dance_state_t *state, void *user_data) {
     tap_states[BRACES].state = cur_dance(state);
     switch (tap_states[BRACES].state) {
-        case TD_SINGLE_TAP: break;
-        case TD_SINGLE_HOLD: break;
-        case TD_DOUBLE_TAP: break;
-        case TD_DOUBLE_SINGLE_TAP: break;
+        case TD_SINGLE_TAP:
+            register_code(KC_LBRC);
+            break;
+        case TD_SINGLE_HOLD:
+            register_code(KC_LCTL);
+            break;
+        case TD_DOUBLE_TAP:
+            register_code(KC_RBRC);
+            break;
+        case TD_DOUBLE_SINGLE_TAP:
+            tap_code(KC_LBRC);
+            register_code(KC_LBRC);
+            break;
         default: break;
     }
 }
 
 static void braces_reset(tap_dance_state_t *state, void *user_data) {
     switch (tap_states[BRACES].state) {
-        case TD_SINGLE_TAP: break;
-        case TD_SINGLE_HOLD: break;
-        case TD_DOUBLE_TAP: break;
-        case TD_DOUBLE_SINGLE_TAP: break;
+        case TD_SINGLE_TAP:
+            unregister_code(KC_LBRC);
+            break;
+        case TD_SINGLE_HOLD:
+            unregister_code(KC_LCTL);
+            break;
+        case TD_DOUBLE_TAP:
+            unregister_code(KC_RBRC);
+            break;
+        case TD_DOUBLE_SINGLE_TAP:
+            unregister_code(KC_LBRC);
+            break;
         default: break;
     }
     tap_states[BRACES].state = TD_NONE;
@@ -156,20 +215,39 @@ static void braces_reset(tap_dance_state_t *state, void *user_data) {
 static void curly_braces_finished(tap_dance_state_t *state, void *user_data) {
     tap_states[CURLY_BRACES].state = cur_dance(state);
     switch (tap_states[CURLY_BRACES].state) {
-        case TD_SINGLE_TAP: break;
-        case TD_SINGLE_HOLD: break;
-        case TD_DOUBLE_TAP: break;
-        case TD_DOUBLE_SINGLE_TAP: break;
+        case TD_SINGLE_TAP:
+        case TD_SINGLE_HOLD:
+            register_code(KC_LSFT);
+            register_code(KC_LBRC);
+            break;
+        case TD_DOUBLE_TAP:
+            register_code(KC_LSFT);
+            register_code(KC_RBRC);
+            break;
+        case TD_DOUBLE_SINGLE_TAP:
+            register_code(KC_LSFT);
+            tap_code(KC_LBRC);
+            register_code(KC_LBRC);
+            break;
         default: break;
     }
 }
 
 static void curly_braces_reset(tap_dance_state_t *state, void *user_data) {
     switch (tap_states[CURLY_BRACES].state) {
-        case TD_SINGLE_TAP: break;
-        case TD_SINGLE_HOLD: break;
-        case TD_DOUBLE_TAP: break;
-        case TD_DOUBLE_SINGLE_TAP: break;
+        case TD_SINGLE_TAP:
+        case TD_SINGLE_HOLD:
+            unregister_code(KC_LSFT);
+            unregister_code(KC_LBRC);
+            break;
+        case TD_DOUBLE_TAP:
+            unregister_code(KC_LSFT);
+            unregister_code(KC_RBRC);
+            break;
+        case TD_DOUBLE_SINGLE_TAP:
+            unregister_code(KC_LSFT);
+            unregister_code(KC_LBRC);
+            break;
         default: break;
     }
     tap_states[CURLY_BRACES].state = TD_NONE;
@@ -178,42 +256,79 @@ static void curly_braces_reset(tap_dance_state_t *state, void *user_data) {
 static void equal_plus_finished(tap_dance_state_t *state, void *user_data) {
     tap_states[EQUAL_PLUS].state = cur_dance(state);
     switch (tap_states[EQUAL_PLUS].state) {
-        case TD_SINGLE_TAP: break;
-        case TD_SINGLE_HOLD: break;
-        case TD_DOUBLE_TAP: break;
-        case TD_DOUBLE_SINGLE_TAP: break;
+        case TD_SINGLE_TAP:
+            register_code(KC_EQL);
+            break;
+        case TD_SINGLE_HOLD:
+            register_code(KC_RCTL);
+            break;
+        case TD_DOUBLE_TAP:
+            register_code(KC_LSFT);
+            register_code(KC_EQL);
+            break;
+        case TD_DOUBLE_SINGLE_TAP:
+            tap_code(KC_EQL);
+            register_code(KC_EQL);
+            break;
         default: break;
     }
 }
 
 static void equal_plus_reset(tap_dance_state_t *state, void *user_data) {
     switch (tap_states[EQUAL_PLUS].state) {
-        case TD_SINGLE_TAP: break;
-        case TD_SINGLE_HOLD: break;
-        case TD_DOUBLE_TAP: break;
-        case TD_DOUBLE_SINGLE_TAP: break;
+        case TD_SINGLE_TAP:
+            unregister_code(KC_EQL);
+            break;
+        case TD_SINGLE_HOLD:
+            unregister_code(KC_RCTL);
+            break;
+        case TD_DOUBLE_TAP:
+            unregister_code(KC_LSFT);
+            unregister_code(KC_EQL);
+            break;
+        case TD_DOUBLE_SINGLE_TAP:
+            unregister_code(KC_EQL);
         default: break;
     }
     tap_states[EQUAL_PLUS].state = TD_NONE;
 }
 
-static void grave_plus_finished(tap_dance_state_t *state, void *user_data) {
+static void grave_tilde_finished(tap_dance_state_t *state, void *user_data) {
     tap_states[GRAVE_TILDE].state = cur_dance(state);
     switch (tap_states[GRAVE_TILDE].state) {
-        case TD_SINGLE_TAP: break;
-        case TD_SINGLE_HOLD: break;
-        case TD_DOUBLE_TAP: break;
-        case TD_DOUBLE_SINGLE_TAP: break;
+        case TD_SINGLE_TAP:
+            register_code(KC_GRV);
+            break;
+        case TD_SINGLE_HOLD:
+            register_code(KC_LGUI);
+            break;
+        case TD_DOUBLE_TAP:
+            register_code(KC_LSFT);
+            register_code(KC_GRV);
+            break;
+        case TD_DOUBLE_SINGLE_TAP:
+            tap_code(KC_GRV);
+            register_code(KC_GRV);
+            break;
         default: break;
     }
 }
 
-static void grave_plus_reset(tap_dance_state_t *state, void *user_data) {
+static void grave_tilde_reset(tap_dance_state_t *state, void *user_data) {
     switch (tap_states[GRAVE_TILDE].state) {
-        case TD_SINGLE_TAP: break;
-        case TD_SINGLE_HOLD: break;
-        case TD_DOUBLE_TAP: break;
-        case TD_DOUBLE_SINGLE_TAP: break;
+        case TD_SINGLE_TAP:
+            unregister_code(KC_GRV);
+            break;
+        case TD_SINGLE_HOLD:
+            unregister_code(KC_LGUI);
+            break;
+        case TD_DOUBLE_TAP:
+            unregister_code(KC_LSFT);
+            unregister_code(KC_GRV);
+            break;
+        case TD_DOUBLE_SINGLE_TAP:
+            unregister_code(KC_GRV);
+            break;
         default: break;
     }
     tap_states[GRAVE_TILDE].state = TD_NONE;
@@ -222,20 +337,39 @@ static void grave_plus_reset(tap_dance_state_t *state, void *user_data) {
 static void lessthan_greaterthan_finished(tap_dance_state_t *state, void *user_data) {
     tap_states[LESSTHAN_GREATERTHAN].state = cur_dance(state);
     switch (tap_states[LESSTHAN_GREATERTHAN].state) {
-        case TD_SINGLE_TAP: break;
-        case TD_SINGLE_HOLD: break;
-        case TD_DOUBLE_TAP: break;
-        case TD_DOUBLE_SINGLE_TAP: break;
+        case TD_SINGLE_TAP:
+        case TD_SINGLE_HOLD:
+            register_code(KC_LSFT);
+            register_code(KC_COMM);
+            break;
+        case TD_DOUBLE_TAP:
+            register_code(KC_LSFT);
+            register_code(KC_DOT);
+            break;
+        case TD_DOUBLE_SINGLE_TAP:
+            register_code(KC_LSFT);
+            tap_code(KC_COMM);
+            register_code(KC_COMM);
+            break;
         default: break;
     }
 }
 
 static void lessthan_greaterthan_reset(tap_dance_state_t *state, void *user_data) {
     switch (tap_states[LESSTHAN_GREATERTHAN].state) {
-        case TD_SINGLE_TAP: break;
-        case TD_SINGLE_HOLD: break;
-        case TD_DOUBLE_TAP: break;
-        case TD_DOUBLE_SINGLE_TAP: break;
+        case TD_SINGLE_TAP:
+        case TD_SINGLE_HOLD:
+            unregister_code(KC_LSFT);
+            unregister_code(KC_COMM);
+            break;
+        case TD_DOUBLE_TAP:
+            unregister_code(KC_LSFT);
+            unregister_code(KC_DOT);
+            break;
+        case TD_DOUBLE_SINGLE_TAP:
+            unregister_code(KC_LSFT);
+            unregister_code(KC_COMM);
+            break;
         default: break;
     }
     tap_states[LESSTHAN_GREATERTHAN].state = TD_NONE;
@@ -244,20 +378,43 @@ static void lessthan_greaterthan_reset(tap_dance_state_t *state, void *user_data
 static void paranthesis_finished(tap_dance_state_t *state, void *user_data) {
     tap_states[PARANTHESIS].state = cur_dance(state);
     switch (tap_states[PARANTHESIS].state) {
-        case TD_SINGLE_TAP: break;
-        case TD_SINGLE_HOLD: break;
-        case TD_DOUBLE_TAP: break;
-        case TD_DOUBLE_SINGLE_TAP: break;
+        case TD_SINGLE_TAP:
+            register_code(KC_LSFT);
+            register_code(KC_9);
+            break;
+        case TD_SINGLE_HOLD:
+            register_code(KC_LSFT);
+            break;
+        case TD_DOUBLE_TAP:
+            register_code(KC_LSFT);
+            register_code(KC_0);
+            break;
+        case TD_DOUBLE_SINGLE_TAP:
+            register_code(KC_LSFT);
+            tap_code(KC_9);
+            register_code(KC_9);
+            break;
         default: break;
     }
 }
 
 static void paranthesis_reset(tap_dance_state_t *state, void *user_data) {
     switch (tap_states[PARANTHESIS].state) {
-        case TD_SINGLE_TAP: break;
-        case TD_SINGLE_HOLD: break;
-        case TD_DOUBLE_TAP: break;
-        case TD_DOUBLE_SINGLE_TAP: break;
+        case TD_SINGLE_TAP:
+            unregister_code(KC_LSFT);
+            unregister_code(KC_9);
+            break;
+        case TD_SINGLE_HOLD:
+            unregister_code(KC_LSFT);
+            break;
+        case TD_DOUBLE_TAP:
+            unregister_code(KC_LSFT);
+            unregister_code(KC_0);
+            break;
+        case TD_DOUBLE_SINGLE_TAP:
+            unregister_code(KC_LSFT);
+            unregister_code(KC_9);
+            break;
         default: break;
     }
     tap_states[PARANTHESIS].state = TD_NONE;
@@ -266,20 +423,33 @@ static void paranthesis_reset(tap_dance_state_t *state, void *user_data) {
 static void q_escape_finished(tap_dance_state_t *state, void *user_data) {
     tap_states[Q_ESCAPE].state = cur_dance(state);
     switch (tap_states[Q_ESCAPE].state) {
-        case TD_SINGLE_TAP: break;
-        case TD_SINGLE_HOLD: break;
-        case TD_DOUBLE_TAP: break;
-        case TD_DOUBLE_SINGLE_TAP: break;
+        case TD_SINGLE_TAP:
+        case TD_SINGLE_HOLD:
+            register_code(KC_Q);
+            break;
+        case TD_DOUBLE_TAP:
+            register_code(KC_ESC);
+            break;
+        case TD_DOUBLE_SINGLE_TAP:
+            tap_code(KC_Q);
+            register_code(KC_Q);
+            break;
         default: break;
     }
 }
 
 static void q_escape_reset(tap_dance_state_t *state, void *user_data) {
     switch (tap_states[Q_ESCAPE].state) {
-        case TD_SINGLE_TAP: break;
-        case TD_SINGLE_HOLD: break;
-        case TD_DOUBLE_TAP: break;
-        case TD_DOUBLE_SINGLE_TAP: break;
+        case TD_SINGLE_TAP:
+        case TD_SINGLE_HOLD:
+            unregister_code(KC_Q);
+            break;
+        case TD_DOUBLE_TAP:
+            unregister_code(KC_ESC);
+            break;
+        case TD_DOUBLE_SINGLE_TAP:
+            unregister_code(KC_Q);
+            break;
         default: break;
     }
     tap_states[Q_ESCAPE].state = TD_NONE;
@@ -288,20 +458,39 @@ static void q_escape_reset(tap_dance_state_t *state, void *user_data) {
 static void question_exclamation_finished(tap_dance_state_t *state, void *user_data) {
     tap_states[QUESTION_EXCLAMATION].state = cur_dance(state);
     switch (tap_states[QUESTION_EXCLAMATION].state) {
-        case TD_SINGLE_TAP: break;
-        case TD_SINGLE_HOLD: break;
-        case TD_DOUBLE_TAP: break;
-        case TD_DOUBLE_SINGLE_TAP: break;
+        case TD_SINGLE_TAP:
+        case TD_SINGLE_HOLD:
+            register_code(KC_LSFT);
+            register_code(KC_SLSH);
+            break;
+        case TD_DOUBLE_TAP:
+            register_code(KC_LSFT);
+            register_code(KC_1);
+            break;
+        case TD_DOUBLE_SINGLE_TAP:
+            register_code(KC_LSFT);
+            tap_code(KC_SLSH);
+            register_code(KC_SLSH);
+            break;
         default: break;
     }
 }
 
 static void question_exclamation_reset(tap_dance_state_t *state, void *user_data) {
     switch (tap_states[QUESTION_EXCLAMATION].state) {
-        case TD_SINGLE_TAP: break;
-        case TD_SINGLE_HOLD: break;
-        case TD_DOUBLE_TAP: break;
-        case TD_DOUBLE_SINGLE_TAP: break;
+        case TD_SINGLE_TAP:
+        case TD_SINGLE_HOLD:
+            unregister_code(KC_LSFT);
+            unregister_code(KC_SLSH);
+            break;
+        case TD_DOUBLE_TAP:
+            unregister_code(KC_LSFT);
+            unregister_code(KC_1);
+            break;
+        case TD_DOUBLE_SINGLE_TAP:
+            unregister_code(KC_LSFT);
+            unregister_code(KC_SLSH);
+            break;
         default: break;
     }
     tap_states[QUESTION_EXCLAMATION].state = TD_NONE;
@@ -310,20 +499,39 @@ static void question_exclamation_reset(tap_dance_state_t *state, void *user_data
 static void quote_doublequote_finished(tap_dance_state_t *state, void *user_data) {
     tap_states[QUOTE_DOUBLEQUOTE].state = cur_dance(state);
     switch (tap_states[QUOTE_DOUBLEQUOTE].state) {
-        case TD_SINGLE_TAP: break;
-        case TD_SINGLE_HOLD: break;
-        case TD_DOUBLE_TAP: break;
-        case TD_DOUBLE_SINGLE_TAP: break;
+        case TD_SINGLE_TAP:
+            register_code(KC_QUOT);
+            break;
+        case TD_SINGLE_HOLD:
+            register_code(KC_RSFT);
+            break;
+        case TD_DOUBLE_TAP:
+            register_code(KC_LSFT);
+            register_code(KC_QUOT);
+            break;
+        case TD_DOUBLE_SINGLE_TAP:
+            tap_code(KC_QUOT);
+            register_code(KC_QUOT);
+            break;
         default: break;
     }
 }
 
 static void quote_doublequote_reset(tap_dance_state_t *state, void *user_data) {
     switch (tap_states[QUOTE_DOUBLEQUOTE].state) {
-        case TD_SINGLE_TAP: break;
-        case TD_SINGLE_HOLD: break;
-        case TD_DOUBLE_TAP: break;
-        case TD_DOUBLE_SINGLE_TAP: break;
+        case TD_SINGLE_TAP:
+            unregister_code(KC_QUOT);
+            break;
+        case TD_SINGLE_HOLD:
+            unregister_code(KC_RSFT);
+            break;
+        case TD_DOUBLE_TAP:
+            unregister_code(KC_LSFT);
+            unregister_code(KC_QUOT);
+            break;
+        case TD_DOUBLE_SINGLE_TAP:
+            unregister_code(KC_QUOT);
+            break;
         default: break;
     }
     tap_states[QUOTE_DOUBLEQUOTE].state = TD_NONE;
@@ -332,20 +540,34 @@ static void quote_doublequote_reset(tap_dance_state_t *state, void *user_data) {
 static void semicolon_colon_finished(tap_dance_state_t *state, void *user_data) {
     tap_states[SEMICOLON_COLON].state = cur_dance(state);
     switch (tap_states[SEMICOLON_COLON].state) {
-        case TD_SINGLE_TAP: break;
-        case TD_SINGLE_HOLD: break;
-        case TD_DOUBLE_TAP: break;
-        case TD_DOUBLE_SINGLE_TAP: break;
+        case TD_SINGLE_TAP:
+            register_code(KC_SCLN);
+            break;
+        case TD_SINGLE_HOLD:
+            register_code(KC_RGUI);
+            break;
+        case TD_DOUBLE_TAP:
+        case TD_DOUBLE_SINGLE_TAP:
+            register_code(KC_LSFT);
+            register_code(KC_SCLN);
+            break;
         default: break;
     }
 }
 
 static void semicolon_colon_reset(tap_dance_state_t *state, void *user_data) {
     switch (tap_states[SEMICOLON_COLON].state) {
-        case TD_SINGLE_TAP: break;
-        case TD_SINGLE_HOLD: break;
-        case TD_DOUBLE_TAP: break;
-        case TD_DOUBLE_SINGLE_TAP: break;
+        case TD_SINGLE_TAP:
+            unregister_code(KC_SCLN);
+            break;
+        case TD_SINGLE_HOLD:
+            unregister_code(KC_RGUI);
+            break;
+        case TD_DOUBLE_TAP:
+        case TD_DOUBLE_SINGLE_TAP:
+            unregister_code(KC_LSFT);
+            unregister_code(KC_SCLN);
+            break;
         default: break;
     }
     tap_states[SEMICOLON_COLON].state = TD_NONE;
@@ -354,20 +576,31 @@ static void semicolon_colon_reset(tap_dance_state_t *state, void *user_data) {
 static void slash_backslash_finished(tap_dance_state_t *state, void *user_data) {
     tap_states[SLASH_BACKSLASH].state = cur_dance(state);
     switch (tap_states[SLASH_BACKSLASH].state) {
-        case TD_SINGLE_TAP: break;
-        case TD_SINGLE_HOLD: break;
-        case TD_DOUBLE_TAP: break;
-        case TD_DOUBLE_SINGLE_TAP: break;
+        case TD_SINGLE_TAP:
+        case TD_SINGLE_HOLD:
+            register_code(KC_SLSH);
+            break;
+        case TD_DOUBLE_TAP:
+            register_code(KC_BSLS);
+            break;
+        case TD_DOUBLE_SINGLE_TAP:
+            tap_code(KC_SLSH);
+            register_code(KC_SLSH);
         default: break;
     }
 }
 
 static void slash_backslash_reset(tap_dance_state_t *state, void *user_data) {
     switch (tap_states[SLASH_BACKSLASH].state) {
-        case TD_SINGLE_TAP: break;
-        case TD_SINGLE_HOLD: break;
-        case TD_DOUBLE_TAP: break;
-        case TD_DOUBLE_SINGLE_TAP: break;
+        case TD_SINGLE_TAP:
+        case TD_SINGLE_HOLD:
+            unregister_code(KC_SLSH);
+            break;
+        case TD_DOUBLE_TAP:
+            unregister_code(KC_BSLS);
+            break;
+        case TD_DOUBLE_SINGLE_TAP:
+            unregister_code(KC_SLSH);
         default: break;
     }
     tap_states[SLASH_BACKSLASH].state = TD_NONE;
@@ -376,45 +609,44 @@ static void slash_backslash_reset(tap_dance_state_t *state, void *user_data) {
 static void underscore_minus_finished(tap_dance_state_t *state, void *user_data) {
     tap_states[UNDERSCORE_MINUS].state = cur_dance(state);
     switch (tap_states[UNDERSCORE_MINUS].state) {
-        case TD_SINGLE_TAP: break;
-        case TD_SINGLE_HOLD: break;
-        case TD_DOUBLE_TAP: break;
-        case TD_DOUBLE_SINGLE_TAP: break;
+        case TD_SINGLE_TAP:
+            register_code(KC_LSFT);
+            register_code(KC_MINS);
+            break;
+        case TD_SINGLE_HOLD:
+            register_code(KC_RALT);
+            break;
+        case TD_DOUBLE_TAP:
+            register_code(KC_MINS);
+            break;
+        case TD_DOUBLE_SINGLE_TAP:
+            register_code(KC_LSFT);
+            tap_code(KC_MINS);
+            register_code(KC_MINS);
+            break;
         default: break;
     }
 }
 
 static void underscore_minus_reset(tap_dance_state_t *state, void *user_data) {
     switch (tap_states[UNDERSCORE_MINUS].state) {
-        case TD_SINGLE_TAP: break;
-        case TD_SINGLE_HOLD: break;
-        case TD_DOUBLE_TAP: break;
-        case TD_DOUBLE_SINGLE_TAP: break;
+        case TD_SINGLE_TAP:
+            unregister_code(KC_LSFT);
+            unregister_code(KC_MINS);
+            break;
+        case TD_SINGLE_HOLD:
+            unregister_code(KC_RALT);
+            break;
+        case TD_DOUBLE_TAP:
+            unregister_code(KC_MINS);
+            break;
+        case TD_DOUBLE_SINGLE_TAP:
+            unregister_code(KC_LSFT);
+            register_code(KC_MINS);
+            break;
         default: break;
     }
     tap_states[UNDERSCORE_MINUS].state = TD_NONE;
-}
-
-static void z_capslock_finished(tap_dance_state_t *state, void *user_data) {
-    tap_states[Z_CAPSLOCK].state = cur_dance(state);
-    switch (tap_states[Z_CAPSLOCK].state) {
-        case TD_SINGLE_TAP: break;
-        case TD_SINGLE_HOLD: break;
-        case TD_DOUBLE_TAP: break;
-        case TD_DOUBLE_SINGLE_TAP: break;
-        default: break;
-    }
-}
-
-static void z_capslock_reset(tap_dance_state_t *state, void *user_data) {
-    switch (tap_states[Z_CAPSLOCK].state) {
-        case TD_SINGLE_TAP: break;
-        case TD_SINGLE_HOLD: break;
-        case TD_DOUBLE_TAP: break;
-        case TD_DOUBLE_SINGLE_TAP: break;
-        default: break;
-    }
-    tap_states[Z_CAPSLOCK].state = TD_NONE;
 }
 
 tap_dance_action_t tap_dance_actions[] = {
@@ -423,7 +655,7 @@ tap_dance_action_t tap_dance_actions[] = {
     [BRACES] = ACTION_TAP_DANCE_FN_ADVANCED(NULL, braces_finished, braces_reset),
     [CURLY_BRACES] = ACTION_TAP_DANCE_FN_ADVANCED(NULL, curly_braces_finished, curly_braces_reset),
     [EQUAL_PLUS] = ACTION_TAP_DANCE_FN_ADVANCED(NULL, equal_plus_finished, equal_plus_reset),
-    [GRAVE_TILDE] = ACTION_TAP_DANCE_FN_ADVANCED(NULL, grave_plus_finished, grave_plus_reset),
+    [GRAVE_TILDE] = ACTION_TAP_DANCE_FN_ADVANCED(NULL, grave_tilde_finished, grave_tilde_reset),
     [LESSTHAN_GREATERTHAN] = ACTION_TAP_DANCE_FN_ADVANCED(NULL, lessthan_greaterthan_finished, lessthan_greaterthan_reset),
     [PARANTHESIS] = ACTION_TAP_DANCE_FN_ADVANCED(NULL, paranthesis_finished, paranthesis_reset),
     [Q_ESCAPE] = ACTION_TAP_DANCE_FN_ADVANCED(NULL, q_escape_finished, q_escape_reset),
@@ -432,5 +664,4 @@ tap_dance_action_t tap_dance_actions[] = {
     [SEMICOLON_COLON] = ACTION_TAP_DANCE_FN_ADVANCED(NULL, semicolon_colon_finished, semicolon_colon_reset),
     [SLASH_BACKSLASH] = ACTION_TAP_DANCE_FN_ADVANCED(NULL, slash_backslash_finished, slash_backslash_reset),
     [UNDERSCORE_MINUS] = ACTION_TAP_DANCE_FN_ADVANCED(NULL, underscore_minus_finished, underscore_minus_reset),
-    [Z_CAPSLOCK] = ACTION_TAP_DANCE_FN_ADVANCED(NULL, z_capslock_finished, z_capslock_reset),
 };

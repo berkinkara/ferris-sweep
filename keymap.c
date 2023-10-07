@@ -32,7 +32,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         /*R23*/ RCTL_T(KC_K),
         /*R24*/ RALT_T(KC_L),
         /*R25*/ TD(SEMICOLON_COLON),
-        /*L31*/ TD(Z_CAPSLOCK),
+        /*L31*/ KC_Z,
         /*L32*/ KC_X,
         /*L33*/ KC_C,
         /*L34*/ KC_V,
