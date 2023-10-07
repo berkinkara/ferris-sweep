@@ -16,7 +16,6 @@ enum {
     SEMICOLON_COLON,
     SLASH_BACKSLASH,
     UNDERSCORE_MINUS,
-    Z_CAPSLOCK,
 };
 
 #endif
