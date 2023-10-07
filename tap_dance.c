@@ -83,7 +83,6 @@ static td_tap_t tap_states[] = {
     [SEMICOLON_COLON] = {.is_press_action = true, .state = TD_NONE},
     [SLASH_BACKSLASH] = {.is_press_action = true, .state = TD_NONE},
     [UNDERSCORE_MINUS] = {.is_press_action = true, .state = TD_NONE},
-    [Z_CAPSLOCK] = {.is_press_action = true, .state = TD_NONE},
 };
 
 
