@@ -79,7 +79,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         /*R34*/ TD(SLASH_BACKSLASH),
         /*R35*/ XXXXXXX,
         /*L41*/ XXXXXXX,
-        /*L42*/ XXXXXXX,
+        /*L42*/ KC_SPC,
         /*L41*/ XXXXXXX,
         /*L42*/ XXXXXXX
     ),
